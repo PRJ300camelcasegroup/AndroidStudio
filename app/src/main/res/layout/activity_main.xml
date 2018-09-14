@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout
-        android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex1c"
@@ -20,8 +26,7 @@
                 android:ems="10"
                 android:hint="Number of 1c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn1c"
@@ -34,9 +39,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex2c"
@@ -45,8 +53,7 @@
                 android:ems="10"
                 android:hint="Number of 2c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                 />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn2c"
@@ -56,9 +63,11 @@
                 android:text="Total 2c" />
         </LinearLayout>
 
-        <LinearLayout android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
 
             <EditText
@@ -68,8 +77,8 @@
                 android:ems="10"
                 android:hint="Number of 5c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                 />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
             <Button
                 android:id="@+id/btn5c"
                 android:layout_width="wrap_content"
@@ -77,9 +86,12 @@
                 android:background="#ff6f00"
                 android:text="Total 5c" />
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex10c"
@@ -88,8 +100,7 @@
                 android:ems="10"
                 android:hint="Number of 10c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn10c"
@@ -98,9 +109,12 @@
                 android:background="#fff200"
                 android:text="Total 10c" />
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex20c"
@@ -109,8 +123,7 @@
                 android:ems="10"
                 android:hint="Number of 20c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                 />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn20c"
@@ -120,9 +133,11 @@
                 android:text="Total 20c" />
         </LinearLayout>
 
-        <LinearLayout android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex50c"
@@ -131,8 +146,7 @@
                 android:ems="10"
                 android:hint="Number of 50c"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-               />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn50c"
@@ -142,9 +156,11 @@
                 android:text="Total 50c" />
         </LinearLayout>
 
-        <LinearLayout android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex1euro"
@@ -153,21 +169,23 @@
                 android:ems="10"
                 android:hint="Number of 1€"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                />
-            <Button android:id="@+id/btn1E"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <Button
+                android:id="@+id/btn1E"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:background="@drawable/big_coins"
-                android:text="Total 1€"/>
-
+                android:background="@drawable/big_coins"
+                android:text="Total 1€" />
 
 
         </LinearLayout>
 
-        <LinearLayout android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <EditText
                 android:id="@+id/tex2euro"
@@ -176,7 +194,7 @@
                 android:ems="10"
                 android:hint="Number of 2€"
                 android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <Button
                 android:id="@+id/btn2E"
@@ -187,15 +205,19 @@
         </LinearLayout>
 
 
-
-
         <TextView
             android:id="@+id/output"
-            android:layout_width="170dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="50sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
+    </ScrollView>
 </layout>

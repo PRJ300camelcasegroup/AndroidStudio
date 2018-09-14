@@ -9,6 +9,7 @@ import com.example.user.shanesandapp.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     private double v;
     ActivityMainBinding bind;
+    private double totalcounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +72,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
     private void one_cent(ActivityMainBinding n){
         v=0;
         if (n.tex1c.getText().toString().equals("") == false)
         {
             v = Double.parseDouble(n.tex1c.getText().toString()) * 0.01;
-            n.output.setText("€" + String.format("%.2f", v));           // fgfg
+            n.output.setText(String.format("Number of 1c : €%.2f", v));
+            totalcounter += v;
+            bind.total.setText(String.format("Total : €%.2f", totalcounter));
         }
 
     }
@@ -87,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
         if (n.tex2c.getText().toString().equals("") == false)
         {
             v=Double.parseDouble(n.tex2c.getText().toString()) * 0.02;
-            n.output.setText("€" + String.format("%.2f", v));
+            n.output.setText(String.format("Number of 2c : €%.2f", v));
+            totalcounter += v;
+            bind.total.setText(String.format("Total : €%.2f", totalcounter));
         }
     }
     private void five_cent(ActivityMainBinding n){
@@ -96,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
             if(n.tex5c.getText().toString().equals("") == false)
             {
                 v=Double.parseDouble(n.tex5c.getText().toString()) * 0.05;
-                n.output.setText("€" + String.format("%.2f", v));
+                n.output.setText(String.format("Number of 5c : €%.2f", v));
+                totalcounter += v;
+                bind.total.setText(String.format("Total : €%.2f", totalcounter));
             }
         }
     private void ten_cent(ActivityMainBinding n){
@@ -104,7 +110,9 @@ public class MainActivity extends AppCompatActivity {
        if (n.tex10c.getText().toString().equals("") == false)
        {
            v=Double.parseDouble(n.tex10c.getText().toString()) * 0.10;
-           n.output.setText("€" + String.format("%.2f", v));
+           n.output.setText(String.format("Number of 10c : €%.2f", v));
+           totalcounter += v;
+           bind.total.setText(String.format("Total : €%.2f", totalcounter));
        }
     }
     private void twenty_cent(ActivityMainBinding n){
@@ -112,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
        if (n.tex20c.getText().toString().equals("") == false)
        {
            v=Double.parseDouble(n.tex20c.getText().toString()) * 0.20;
-           n.output.setText("€" + String.format("%.2f", v));
+           n.output.setText(String.format("Number of 20c : €%.2f", v));
+           totalcounter += v;
+           bind.total.setText(String.format("Total : €%.2f", totalcounter));
        }
     }
     private void fifty_cent(ActivityMainBinding n){
@@ -120,7 +130,9 @@ public class MainActivity extends AppCompatActivity {
         if (n.tex50c.getText().toString().equals("") == false)
         {
             v=Double.parseDouble(n.tex50c.getText().toString()) * 0.50;
-            n.output.setText("€" + String.format("%.2f", v));
+            n.output.setText(String.format("Number of 50c : €%.2f", v));
+            totalcounter += v;
+            bind.total.setText(String.format("Total : €%.2f", totalcounter));
         }
     }
     private void one_euro(ActivityMainBinding n){
@@ -128,7 +140,9 @@ public class MainActivity extends AppCompatActivity {
         if (n.tex1euro.getText().toString().equals("") == false)
         {
             v=Double.parseDouble(n.tex1euro.getText().toString()) * 1.00;
-            n.output.setText("€" + String.format("%.2f", v));
+            n.output.setText(String.format("Number of €1 : €%.2f", v));
+            totalcounter += v;
+            bind.total.setText(String.format("Total : €%.2f", totalcounter));
         }
     }
     private void two_euro(ActivityMainBinding n){
@@ -136,7 +150,9 @@ public class MainActivity extends AppCompatActivity {
        if (n.tex2euro.getText().toString().equals("") == false)
        {
            v=Double.parseDouble(n.tex2euro.getText().toString()) * 2.00;
-           n.output.setText("€" + String.format("%.2f", v));
+           n.output.setText(String.format("Number of €2 : €%.2f", v));
+           totalcounter += v;
+           bind.total.setText(String.format("Total : €%.2f", totalcounter));
        }
     }
 }
