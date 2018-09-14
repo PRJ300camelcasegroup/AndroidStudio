@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         if (n.tex1c.getText().toString().equals("") == false)
         {
             v = Double.parseDouble(n.tex1c.getText().toString()) * 0.01;
-            n.output.setText("€" + String.format("%.2f", v));
+            n.output.setText("€" + String.format("%.2f", v));           // fgfg
         }
 
     }
