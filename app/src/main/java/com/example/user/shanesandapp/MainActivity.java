@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.user.shanesandapp.databinding.ActivityMainBinding;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private double v;
@@ -14,10 +17,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Write a message to the database
+        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
-
+        myRef.setValue("Hello, World!");
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
+        */
         bind.btn1c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

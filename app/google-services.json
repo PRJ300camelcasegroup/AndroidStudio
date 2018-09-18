@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "302835076791",
+    "firebase_url": "https://testproj-ae217.firebaseio.com",
+    "project_id": "testproj-ae217",
+    "storage_bucket": "testproj-ae217.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302835076791:android:0b54a38ece66e499",
+        "android_client_info": {
+          "package_name": "com.example.user.shanesandapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302835076791-p3l0rhhr1ie05silsomjlsdm4e65id32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJFZ47lWBMu0pprPBqANUj-7pbx9Ek-gI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
