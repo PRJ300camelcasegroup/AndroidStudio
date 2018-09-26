@@ -1,29 +1,27 @@
 package com.example.user.shanesandapp;
+
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.user.shanesandapp.databinding.ActivityMainBinding;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     private double v;
     ActivityMainBinding bind;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     private double totalcounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Write a message to the database
-        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        */
+
         bind.btn1c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private void one_cent(ActivityMainBinding n){
         v=0;
+
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("HelloWorld");
         if (n.tex1c.getText().toString().equals("") == false)
         {
             v = Double.parseDouble(n.tex1c.getText().toString()) * 0.01;
@@ -92,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void two_cent(ActivityMainBinding n){
         v=0;
+        DatabaseReference second = database.getReference("DriverName");
+        second.setValue("Shane");
         if (n.tex2c.getText().toString().equals("") == false)
         {
             v=Double.parseDouble(n.tex2c.getText().toString()) * 0.02;
