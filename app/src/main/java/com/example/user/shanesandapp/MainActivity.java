@@ -9,18 +9,54 @@ import com.example.user.shanesandapp.databinding.ActivityMainBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class MainActivity extends AppCompatActivity {
     private double v;
     ActivityMainBinding bind;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private double totalcounter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         // Write a message to the database
+        super.onCreate(savedInstanceState);
+        OkHttpClient client = new OkHttpClient();
+
 
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main);
+       // https://punkface:wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW@api.challonge.com/v1/tournaments/2019_WDC.json
+        String url = "https://api.challonge.com/v1/tournaments/2019_WDC.json?api_key=wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW";
+        Request build = new Request.Builder()
+                .url(url)
+                .build();
+        client.newCall(build).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+//Installation failed with message Failed to establish session.
+//It is possible that this issue is resolved by uninstalling an existing version of the apk if it is present, and then re-installing.
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String data = response.body().string();
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            bind.total.setText(data);
+                        }
+                    });
+                }
+            }
+        });
 
         bind.btn1c.setOnClickListener(new View.OnClickListener() {
             @Override
