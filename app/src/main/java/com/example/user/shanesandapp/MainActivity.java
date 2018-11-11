@@ -5,62 +5,62 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.user.shanesandapp.databinding.ActivityMainBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private double v;
     ActivityMainBinding bind;
+    RequestQueue jkj;
+     String data = "";
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private double totalcounter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Write a message to the database
         super.onCreate(savedInstanceState);
-        OkHttpClient client = new OkHttpClient();
 
 
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main);
-       // https://punkface:wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW@api.challonge.com/v1/tournaments/2019_WDC.json
+         jkj= Volley.newRequestQueue(getApplicationContext()); // getApplicationContext ==> It lets newly-created objects understand what has been going on in the app so far
+
         String url = "https://api.challonge.com/v1/tournaments/2019_WDC.json?api_key=wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW";
-        Request build = new Request.Builder()
-                .url(url)
-                .build();
-        client.newCall(build).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-//Installation failed with message Failed to establish session.
-//It is possible that this issue is resolved by uninstalling an existing version of the apk if it is present, and then re-installing.
 
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    final String data = response.body().string();
-                    MainActivity.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            bind.total.setText(data);
+        JsonObjectRequest ChallongeApi = new JsonObjectRequest(Request.Method.GET, url,null,
+                new Response.Listener<JSONObject>(){
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONObject TOURNEY = response.getJSONObject("tournament");
+                            bind.output.setText(TOURNEY.getString("id"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
-                }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+
             }
         });
+        jkj.add(ChallongeApi);
 
         bind.btn1c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //bind.output.setText(data);
                 one_cent(bind);
             }
         });
