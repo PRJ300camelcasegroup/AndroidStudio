@@ -208,6 +208,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="30sp"
+            android:lines="101"
+            android:maxLines="102"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/total"

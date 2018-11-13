@@ -9,14 +9,14 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.user.shanesandapp.databinding.ActivityMainBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private double v;
@@ -34,15 +34,20 @@ public class MainActivity extends AppCompatActivity {
         bind = DataBindingUtil.setContentView(this, R.layout.activity_main);
          jkj= Volley.newRequestQueue(getApplicationContext()); // getApplicationContext ==> It lets newly-created objects understand what has been going on in the app so far
 
-        String url = "https://api.challonge.com/v1/tournaments/2019_WDC.json?api_key=wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW";
+        String url = "https://api.challonge.com/v1/tournaments/2019_WDC/participants.json?api_key=wVd60AxUdFQJKZWc0DTFVTfWlZulTUkZyigOaLnW";
 
-        JsonObjectRequest ChallongeApi = new JsonObjectRequest(Request.Method.GET, url,null,
-                new Response.Listener<JSONObject>(){
+        JsonArrayRequest ChallongeApi = new JsonArrayRequest(Request.Method.GET, url,null,
+                new Response.Listener<JSONArray>(){
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                            JSONObject TOURNEY = response.getJSONObject("tournament");
-                            bind.output.setText(TOURNEY.getString("id"));
+                           // JSONArray PLAYERS = response.names();
+                            //JSONObject K = response.getJSONObject("participant");
+//                            JSONObject TOURNEY = response.getJSONObject("tournament");
+                            for (int i = 0;i<response.length();i++){
+                                bind.output.append(String.format(response.getJSONObject(i).getJSONObject("participant").getString("name") + '\n'));
+
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
