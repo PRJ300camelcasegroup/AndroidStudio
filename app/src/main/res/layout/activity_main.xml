@@ -12,211 +12,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
+      <!--  android:background="@drawable/big_coins"       WAY TO ACCES DRAWABLE OBJECTS -->
 
-            <EditText
-                android:id="@+id/tex1c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 1c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn1c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ff6f00"
-                android:text="Total 1c"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex2c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 2c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn2c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ff6f00"
-                android:text="Total 2c" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-
-            <EditText
-                android:id="@+id/tex5c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 5c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn5c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#ff6f00"
-                android:text="Total 5c" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex10c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 10c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn10c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#fff200"
-                android:text="Total 10c" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex20c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 20c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn20c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#fff200"
-                android:text="Total 20c" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex50c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 50c"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn50c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#fff200"
-                android:text="Total 50c" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex1euro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 1€"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn1E"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/big_coins"
-                android:text="Total 1€" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/tex2euro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Number of 2€"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <Button
-                android:id="@+id/btn2E"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/big_coins"
-                android:text="Total 2€" />
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/output"
+        <HorizontalScrollView
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/DATA"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:lines="101"
-            android:maxLines="102"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/total"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:text="Data"
+            android:onClick="ViewData"/>
+
+
 
     </LinearLayout>
     </ScrollView>
